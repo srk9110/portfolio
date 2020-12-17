@@ -32,71 +32,74 @@
     <!-- home -->
     <section id="home">
         <img src="image/photo.png" alt="avartar" class="home__avartar">
-        <h1 class="home__title">안녕하세요! <br/>강새롬입니다!</h1>
+        <h1 class="home__title">안녕하세요! <br/>강새롬입니다.</h1>
         <h2 class="home_description">풀스택 개발자를 꿈꾸고 있습니다.</h2>
         <button class="home_contact">Contact Me</button>
     </section>
     <!--about-->
-    <section id="about">
+    <section id="about" class="section">
         <h1>About Me</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio vel ad suscipit dolore molestiae nam quam debitis, 
             accusamus natus quia modi quas ullam minus iste impedit nisi maxime quibusdam saepe.</p>
         <div class="about__majors">
-            <div class="major"></div>
-            <div class="major__icon">
-                <i class="fab fa-html5"></i>
-            </div>
-            <div class="major__title">Front-end</div>
-            <div class="major__description">
-                HTML5, CSS3, JavaScript es6, React, jQuery
-            </div>
-        </div>
-        <div class="about__majors">
-            <div class="major"></div>
-            <div class="major__icon">
-                <i class="fas fa-server"></i>
-            </div>
-            <div class="major__title">Back-end</div>
-            <div class="major__description">
-                Java, JavaScript es6, NodeJs, Spring 
-            </div>
-        </div>
-        <div class="about__majors">
-            <div class="major"></div>
-            <div class="major__icon">
-                <i class="fas fa-database"></i>
-            </div>
-            <div class="major__title">DataBase</div>
-            <div class="major__description">
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h2 class="major__title">Front-end</h2>
+                <div class="major__description">
+                    HTML5, CSS3, <br/>JavaScript es6, React, jQuery
+                </div>
+            </div> 
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h2 class="major__title">Back-end</h2>
+                <div class="major__description">
+                    Java, JavaScript es6, <br/>NodeJs, Spring 
+                </div>
+            </div> 
+                <div class="major">
+                <div class="major__icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h2 class="major__title">DataBase</h2>
+                <div class="major__description">
                 MySQL Workbench
-            </div>
-        </div>
-        <div class="about__majors">
-            <div class="major"></div>
-            <div class="major__icon">
-                <i class="fab fa-github"></i>
-            </div>
-            <div class="major__title">Ect Tool</div>
-            <div class="major__description">
+                </div>
+            </div>  
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h2 class="major__title">Ect Tool</h2>
+                <div class="major__description">
                 Git, Unity(C#), Visual Studio, <br/>
                 Visual Studio Code, Bracket
+                </div>
             </div>
         </div>
-        <div class="about__majors">
-            <div class="about__major">
-                <img src="" alt="" class="school__logo">
-                <p class="school__name">숭실대학교</p>
-                <p class="school__period"></p>
+        <div class="about__schools">
+            <div class="about__school">
+                <img src="./image/school/school logo.PNG" alt="soongsil university" class="school__logo">
+                <div class="school__description">
+                    <p class="school__name">숭실대학교 글로벌 미디어 학부</p>
+                    <p class="school__period">2010.03 - 2015.02</p>
+                </div>
+                
             </div>
-            <div class="about__major">
-                <img src="" alt="" class="school__logo">
-                <p class="school__name">학원</p>
-                <p class="school__period"></p>
+            <div class="about__school">
+                <img src="./image/school/thejoeun.PNG" alt="thejoeun" class="school__logo">
+                <div class="school__description">
+                    <p class="school__name">종로더조은컴퓨터학원 게임개발자 양성자 과정</p>
+                    <p class="school__period">2020.04 - 2020.09</p>
+                </div>
             </div>
         </div>
         </section>
     <!--skills-->
-    <section id="skills">
+    <section id="skills" class="section">
         <h1>Skills</h1>
         <h2>Skills & Attributes</h2>
         <div class="skillset">
@@ -180,7 +183,7 @@
         </div>
     </section>
     <!--work-->
-    <section id="work">
+    <section id="work" class="section">
         <h1>My work</h1>
         <h3>Projects</h3>
         <div class="work__categories">
@@ -213,7 +216,7 @@
         </div>  
     </section>
     <!--testimonials-->
-    <section id="testimonials">
+    <section id="testimonials" class="section">
         <h1>Testimonials</h1>
         <h3>See what they say about me</h3>
         <div class="testimonials">
@@ -233,7 +236,7 @@
         </div>
     </section>
     <!--contact-->
-    <seciton id="contact">
+    <seciton id="contact" class="section">
         <h1 class="contact__title">Contact</h1>
         <h2 class="contact__email">srk911028@gmail.com</h2>
         <div class="contact__link">
@@ -241,7 +244,8 @@
                 <i class="fab fa-github"></i>
             </a>
             <a href="https://srk911028.tistory.com" target="_blank">
-                <img src="image/contact/tistory-logo.png" alt="tistory" class="tistroy__icon"/>          
+                <img src="image/contact/tistory-logo.png" width="30" height="30"
+                alt="tistory" class="tistroy__icon"/>          
             </a>
         </div>
         <p class="contact__rights">
