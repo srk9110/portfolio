@@ -92,6 +92,18 @@ button {
   outline: none;
 }
 
+/*section common*/
+.section {
+  padding: 50px;
+  text-align: center;
+  margin: auto;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
+}
+
 /*Navbar*/
 #navbar {
   display: flex;
@@ -154,18 +166,6 @@ button {
   border: 2px solid var(--color-white);
   border-radius: 4px;
   color: var(--color-white);
-}
-
-/*section common*/
-.section {
-  padding: 50px;
-  text-align: center;
-  margin: auto;
-}
-
-.section__container {
-  max-width: 1200px;
-  margin: auto;
 }
 
 /*About*/
@@ -428,7 +428,7 @@ button {
 
 /*Contact*/
 #contact {
-  background-color: var(--color-blue);
+  background-color: var(--color-light-blue);
 }
 
 .contact__title,
