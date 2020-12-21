@@ -120,7 +120,7 @@ button {
 
 #navbar.navbar--dark {
   background-color: var(--color-light-blue);
-  padding: 8px;
+  padding: 16px;
 }
 
 .navbar__menu {
@@ -403,7 +403,7 @@ button {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -411,9 +411,9 @@ button {
   display: block;
   position: relative;
   left: 50%;
-  width: 25px;
+  width: 50px;
   height: 2px;
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 10px;
   background-color: var(--color-dark-white);
 }
@@ -508,6 +508,7 @@ button {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-light-blue);
   }
 
   .navbar__menu {
@@ -515,6 +516,10 @@ button {
     text-align: center;
     width: 100%;
     display: none;
+  }
+
+  .navbar__menu.active {
+    display: block;
   }
 
   .about__majors {

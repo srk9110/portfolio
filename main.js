@@ -12,15 +12,6 @@ document.addEventListener('scroll', ()=>{
     }
 });
 
-//home 스크롤 시 불투명
-const home = document.querySelector('.home__container');
-const homeHeight = home.getBoundingClientRect().height;
-
-document.addEventListener('scroll',()=>{
-    const opacity = (1-window.scrollY/homeHeight);
-    home.style.opacity = opacity;
-});
-
 
 //네비게이션 버튼 스크롤링
 const navbarMenu = document.querySelector('.navbar__menu');
@@ -31,7 +22,26 @@ navbarMenu.addEventListener('click',(event)=>{
     if(link==null){
         return;
     }
+    navbarMenu.classList.remove('active');
     scrollIntoView(link);
+});
+
+
+//화면 작을 때 버튼 클릭하면 네비게이션 메뉴 나타나게하기
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+
+navbarToggleBtn.addEventListener('click',()=>{
+    navbarMenu.classList.toggle('active');
+});
+
+
+//home 스크롤 시 불투명
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+
+document.addEventListener('scroll',()=>{
+    const opacity = (1-window.scrollY/homeHeight);
+    home.style.opacity = opacity;
 });
 
 
