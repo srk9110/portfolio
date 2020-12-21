@@ -12,9 +12,17 @@ document.addEventListener('scroll', ()=>{
     }
 });
 
+//home 스크롤 시 불투명
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+
+document.addEventListener('scroll',()=>{
+    const opacity = (1-scrollY/homeHeight);
+    home.style.opacity = opacity;
+});
+
 
 //네비게이션 버튼 스크롤링
-
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click',(event)=>{
     const target = event.target;
@@ -39,5 +47,7 @@ function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior:'smooth'});
 }
+
+
 
 

@@ -160,6 +160,7 @@ button {
   padding: 40px;
   padding-top: 100px;
   text-align: center;
+  transition: all var(--animation-duration) linear;
 }
 
 .home__avartar {
