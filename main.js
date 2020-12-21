@@ -23,12 +23,21 @@ navbarMenu.addEventListener('click',(event)=>{
     if(link==null){
         return;
     }
-
-    console.log(link);
-    const scrollTo = document.querySelector(link);
-    console.log(scrollTo);
-    scrollTo.scrollIntoView({behavior:'smooth', block:'start'});
+    scrollIntoView(link);
 });
 
+
+//contact me 버튼 스크롤링
+
+const contactMeBtn = document.querySelector('.home__contact');
+contactMeBtn.addEventListener('click',()=>{
+    scrollIntoView('#contact');
+});
+
+//이동함수
+function scrollIntoView(selector){
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:'smooth'});
+}
 
 
