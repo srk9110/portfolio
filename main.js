@@ -17,7 +17,7 @@ const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 
 document.addEventListener('scroll',()=>{
-    const opacity = (1-scrollY/homeHeight);
+    const opacity = (1-window.scrollY/homeHeight);
     home.style.opacity = opacity;
 });
 
@@ -42,12 +42,28 @@ contactMeBtn.addEventListener('click',()=>{
     scrollIntoView('#contact');
 });
 
+
+//arrow up 버튼 스크롤시 보여주기 
+const arrowBtn = document.querySelector('#arrow-btn');
+
+document.addEventListener('scroll', ()=>{
+    if(window.scrollY>homeHeight/2){
+        arrowBtn.classList.add('visible');
+    } else {
+        arrowBtn.classList.remove('visible');
+    }
+});
+
+arrowBtn.addEventListener('click',()=>{
+    scrollIntoView('#home');
+});
+
+
 //이동함수
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior:'smooth'});
 }
-
 
 
 
