@@ -70,6 +70,13 @@ workBtnContainer.addEventListener('click',(event)=>{
         return;
     }
 
+    //이전 선택된 버튼 없애고 새로운 버튼에 효과 적용하기
+    const active = document.querySelector('.category__btn.selected');
+    active.classList.remove('selected');
+    const target = 
+    event.target.nodeName ==='BUTTON' ? event.target : event.target.parentNode;
+    target.classList.add('selected');
+
     projectContainer.classList.add('anim-out');
 
     setTimeout(()=>{
