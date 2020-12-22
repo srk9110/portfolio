@@ -94,7 +94,7 @@ button {
 
 /*section common*/
 .section {
-  padding: 50px;
+  padding: 25px;
   text-align: center;
   margin: auto;
 }
@@ -139,7 +139,8 @@ button {
   border-radius: var(--size-border-radius);
 }
 
-.navbar__menu__item:hover {
+.navbar__menu__item:hover,
+.navbar__menu__item.active {
   color: var(--color-light-blue);
   background-color: var(--color-white);
 }
@@ -182,6 +183,11 @@ button {
   border: 2px solid var(--color-white);
   border-radius: 4px;
   color: var(--color-white);
+}
+
+.home__contact:hover {
+  background-color: var(--color-white);
+  color: var(--color-blue);
 }
 
 /*About*/
@@ -320,6 +326,7 @@ button {
   border-radius: 4px;
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn:hover,
@@ -331,7 +338,7 @@ button {
 .category__btn:hover .category__count,
 .category__btn.selected .category__count {
   opacity: 1;
-  top: 0px;
+  top: 5px;
 }
 
 .category__count {
@@ -342,9 +349,9 @@ button {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 10px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -465,7 +472,7 @@ button {
 }
 
 .contact__title {
-  margin: 32px 0;
+  margin-bottom: 16px;
 }
 
 .contact__links {
@@ -501,8 +508,20 @@ button {
 /*media*/
 /*768px below*/
 @media screen and (max-width: 768px) {
+  :root {
+    /*Font size*/
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -522,24 +541,53 @@ button {
     display: block;
   }
 
+  .section {
+    padding: 16px;
+  }
+
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 15px;
   }
 
   .skillset {
     flex-direction: column;
   }
 
+  .category__btn {
+    margin: 4px;
+    width: 100%;
+  }
+
   .project {
     flex-grow: 1;
+  }
+
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
   }
 
   .testimonial__avatar {
     width: 80px;
     height: 80px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
+  .contact__links img {
+    width: 25px;
+    height: 25px;
+  }
+
+  #arrow-btn {
+    left: 85%;
+    top: 90%;
+    font-size: 30px;
   }
 }

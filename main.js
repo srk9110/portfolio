@@ -24,7 +24,64 @@ navbarMenu.addEventListener('click',(event)=>{
     }
     navbarMenu.classList.remove('active');
     scrollIntoView(link);
+    selectNavItem(target);
 });
+
+
+//스크롤링 따라 네비게이션바 메뉴 활성화
+const sectionIds = [
+    '#home',
+    '#about',
+    '#skills',
+    '#works',
+    '#testimonial',
+    '#contact' 
+];
+
+const sections = sectionIds.map(id=>document.querySelector(id));
+const navItems = sectionIds.map(id=>
+    document.querySelector(`[data-link="${id}"]`)
+);
+
+let selectedNavItem = navItems[0];
+let selectedNavIndex=0;
+function selectNavItem(selected){
+    selectedNavItem.classList.remove('active');
+    selectedNavItem = selected;
+    selectedNavItem.classList.add('active');
+};
+
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3,
+};
+
+const observer = new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting && entry.intersectionRatio>0){
+            const index = sectionIds.indexOf(`#${entry.target.id}`);
+
+            if(entry.boundingClientRect.y<0){
+                selectedNavIndex = index+1;
+            } else {
+                selectedNavIndex = index-1;
+            }
+        }
+    });   
+    
+},observerOptions);
+sections.forEach(section=>observer.observe(section));
+
+window.addEventListener('wheel',()=>{
+    if(window.scrollY===0){
+        selectedNavIndex=0;
+    } else if(Math.round(window.scrollY+window.innerHeight) >= document.body.clientHeight){
+        selectedNavIndex=navItems.length-1;
+    }
+    selectNavItem(navItems[selectedNavIndex]);
+});
+
 
 
 //화면 작을 때 버튼 클릭하면 네비게이션 메뉴 나타나게하기
@@ -109,7 +166,10 @@ workBtnContainer.addEventListener('click',(event)=>{
 //이동함수
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior:'smooth'});
+    const top = scrollTo.offsetTop-navbarHeight<0
+    ?0:scrollTo.offsetTop-navbarHeight;
+    window.scrollTo({behavior:'smooth', top:top});
+    selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
 
 
