@@ -34,7 +34,6 @@ const sectionIds = [
     '#about',
     '#skills',
     '#works',
-    '#testimonial',
     '#contact' 
 ];
 
@@ -149,6 +148,7 @@ workBtnContainer.addEventListener('click',(event)=>{
     setTimeout(()=>{
 
         projects.forEach((project)=>{
+            console.log(filter);
             if(filter==='*' || filter ===project.dataset.type){
                 project.classList.remove('invisible');
             } else {

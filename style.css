@@ -164,8 +164,8 @@ button {
 }
 
 .home__avartar {
-  width: 250px;
-  height: 250px;
+  width: 236px;
+  height: 315px;
   border-radius: 50%;
   border: 2px solid var(--color-light-white);
 }
@@ -305,7 +305,7 @@ button {
 }
 
 .skill__value {
-  width: 70%;
+  width: 80%;
   height: 3px;
   background-color: var(--color-orange);
 }
